@@ -11,3 +11,4 @@ export '/main/homepage/homepage_widget.dart' show HomepageWidget;
 export '/main/detail/detail_widget.dart' show DetailWidget;
 export '/main/your_ebook/your_ebook_widget.dart' show YourEbookWidget;
 export '/main/detail2/detail2_widget.dart' show Detail2Widget;
+export '/main/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
