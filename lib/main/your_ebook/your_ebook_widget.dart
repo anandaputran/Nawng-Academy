@@ -12,7 +12,12 @@ import 'your_ebook_model.dart';
 export 'your_ebook_model.dart';
 
 class YourEbookWidget extends StatefulWidget {
-  const YourEbookWidget({super.key});
+  const YourEbookWidget({
+    super.key,
+    required this.ebookBought,
+  });
+
+  final DocumentReference? ebookBought;
 
   static String routeName = 'YourEbook';
   static String routePath = '/yourEbook';
@@ -95,68 +100,54 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 10.0),
-              child: StreamBuilder<UsersRecord>(
-                stream: UsersRecord.getDocument(currentUserReference!),
-                builder: (context, snapshot) {
-                  // Customize what your widget looks like when it's loading.
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: SizedBox(
-                        width: 50.0,
-                        height: 50.0,
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            FlutterFlowTheme.of(context).primary,
-                          ),
-                        ),
+              child: Container(
+                width: 351.0,
+                height: MediaQuery.sizeOf(context).height * 0.688,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                  child: AuthUserStreamWidget(
+                    builder: (context) => StreamBuilder<List<EbookRecord>>(
+                      stream: queryEbookRecord(
+                        queryBuilder: (ebookRecord) => ebookRecord.whereIn('id',
+                            (currentUserDocument?.ebookId.toList() ?? [])),
                       ),
-                    );
-                  }
-
-                  final containerUsersRecord = snapshot.data!;
-
-                  return Container(
-                    width: 351.0,
-                    height: MediaQuery.sizeOf(context).height * 0.688,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          10.0, 10.0, 10.0, 10.0),
-                      child: StreamBuilder<List<EbookRecord>>(
-                        stream: queryEbookRecord(
-                          queryBuilder: (ebookRecord) => ebookRecord.whereIn(
-                              'id', containerUsersRecord.ebookId),
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
-                                  ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
                                 ),
                               ),
-                            );
-                          }
-                          List<EbookRecord> listViewEbookRecordList =
-                              snapshot.data!;
+                            ),
+                          );
+                        }
+                        List<EbookRecord> listViewEbookRecordList =
+                            snapshot.data!;
 
-                          return ListView.separated(
-                            padding: EdgeInsets.zero,
-                            scrollDirection: Axis.vertical,
-                            itemCount: listViewEbookRecordList.length,
-                            separatorBuilder: (_, __) => SizedBox(height: 10.0),
-                            itemBuilder: (context, listViewIndex) {
-                              final listViewEbookRecord =
-                                  listViewEbookRecordList[listViewIndex];
-                              return Material(
+                        return ListView.separated(
+                          padding: EdgeInsets.zero,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewEbookRecordList.length,
+                          separatorBuilder: (_, __) => SizedBox(height: 10.0),
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewEbookRecord =
+                                listViewEbookRecordList[listViewIndex];
+                            return Visibility(
+                              visible:
+                                  (currentUserDocument?.ebookId.toList() ?? [])
+                                          .contains(listViewEbookRecord.id) ==
+                                      true,
+                              child: Material(
                                 color: Colors.transparent,
                                 elevation: 10.0,
                                 shape: RoundedRectangleBorder(
@@ -394,14 +385,14 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
                                     ),
                                   ),
                                 ),
-                              );
-                            },
-                          );
-                        },
-                      ),
+                              ),
+                            );
+                          },
+                        );
+                      },
                     ),
-                  );
-                },
+                  ),
+                ),
               ),
             ),
             Padding(
@@ -424,6 +415,12 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
                         onTap: () async {
                           context.pushNamed(
                             YourEbookWidget.routeName,
+                            queryParameters: {
+                              'ebookBought': serializeParam(
+                                currentUserReference,
+                                ParamType.DocumentReference,
+                              ),
+                            }.withoutNulls,
                             extra: <String, dynamic>{
                               kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
@@ -437,37 +434,65 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
                           width: 100.0,
                           height: 100.0,
                           decoration: BoxDecoration(),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              FlutterFlowIconButton(
-                                borderRadius: 0.0,
-                                buttonSize: 40.0,
-                                icon: Icon(
-                                  Icons.home_rounded,
-                                  color: FlutterFlowTheme.of(context).info,
-                                  size: 24.0,
-                                ),
-                                onPressed: () async {
-                                  context.pushNamed(
-                                    YourEbookWidget.routeName,
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType: PageTransitionType.fade,
-                                        duration: Duration(milliseconds: 0),
-                                      ),
-                                    },
-                                  );
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(
+                                HomepageWidget.routeName,
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
                                 },
-                              ),
-                              Text(
-                                'Beranda',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.montserratAlternates(
+                              );
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FlutterFlowIconButton(
+                                  borderRadius: 0.0,
+                                  buttonSize: 40.0,
+                                  icon: Icon(
+                                    Icons.home_rounded,
+                                    color: FlutterFlowTheme.of(context).info,
+                                    size: 24.0,
+                                  ),
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      HomepageWidget.routeName,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                ),
+                                Text(
+                                  'Beranda',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.montserratAlternates(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .fontWeight,
@@ -475,16 +500,9 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
                                             .bodyMedium
                                             .fontStyle,
                                       ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                              ),
-                            ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -500,6 +518,12 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
                           onTap: () async {
                             context.goNamed(
                               YourEbookWidget.routeName,
+                              queryParameters: {
+                                'ebookBought': serializeParam(
+                                  currentUserReference,
+                                  ParamType.DocumentReference,
+                                ),
+                              }.withoutNulls,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
@@ -521,8 +545,16 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
                                   color: FlutterFlowTheme.of(context).info,
                                   size: 24.0,
                                 ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
+                                onPressed: () async {
+                                  context.pushNamed(
+                                    YourEbookWidget.routeName,
+                                    queryParameters: {
+                                      'ebookBought': serializeParam(
+                                        currentUserReference,
+                                        ParamType.DocumentReference,
+                                      ),
+                                    }.withoutNulls,
+                                  );
                                 },
                               ),
                               Text(

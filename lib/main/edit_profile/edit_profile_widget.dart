@@ -71,7 +71,16 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       size: 20.0,
                     ),
                     onPressed: () async {
-                      context.pop();
+                      context.goNamed(
+                        ProfileWidget.routeName,
+                        extra: <String, dynamic>{
+                          kTransitionInfoKey: TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
                     },
                   ),
                 ),

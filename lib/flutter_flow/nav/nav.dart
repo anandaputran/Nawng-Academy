@@ -146,7 +146,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: YourEbookWidget.routeName,
           path: YourEbookWidget.routePath,
-          builder: (context, params) => YourEbookWidget(),
+          builder: (context, params) => YourEbookWidget(
+            ebookBought: params.getParam(
+              'ebookBought',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
         ),
         FFRoute(
           name: Detail2Widget.routeName,
