@@ -167,9 +167,9 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.stretch,
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Container(
                                           width: 100.0,
@@ -191,14 +191,14 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
                                           ),
                                         ),
                                         Column(
-                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisSize: MainAxisSize.min,
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceAround,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
                                             Container(
-                                              width: 200.0,
+                                              width: 190.0,
                                               height: 40.0,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFFDFDFD),
@@ -247,7 +247,7 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
                                               ),
                                             ),
                                             Container(
-                                              width: 200.0,
+                                              width: 190.0,
                                               height: 90.0,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFFDFDFD),
@@ -380,8 +380,7 @@ class _YourEbookWidgetState extends State<YourEbookWidget> {
                                         ),
                                       ]
                                           .divide(SizedBox(width: 10.0))
-                                          .addToStart(SizedBox(width: 10.0))
-                                          .addToEnd(SizedBox(width: 10.0)),
+                                          .around(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                 ),

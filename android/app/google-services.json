@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "175898091193-sojlu3m69t40jucit6mik2ikr6mmjefj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nawngindonesia.nawngacademy",
+            "certificate_hash": "a2b7c996d7ac9e84d8fa0b71328e224f7573d17d"
+          }
+        },
+        {
           "client_id": "175898091193-62sfe53jgbdhuf3k5ce6oj83o9c8b95b.apps.googleusercontent.com",
           "client_type": 3
         }

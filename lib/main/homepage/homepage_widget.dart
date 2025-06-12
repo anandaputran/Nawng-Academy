@@ -154,6 +154,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding:
                       EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
@@ -192,7 +193,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              width: 311.0,
                               height: MediaQuery.sizeOf(context).height * 0.25,
                               decoration: BoxDecoration(
                                 color: Color(0xFF0D7EDD),
@@ -202,11 +203,9 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 10.0),
                                 child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Container(
                                       width: 100.0,
@@ -228,14 +227,14 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                       ),
                                     ),
                                     Column(
-                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
                                         Container(
-                                          width: 200.0,
+                                          width: 190.0,
                                           height: 40.0,
                                           decoration: BoxDecoration(
                                             color: Color(0xFFFDFDFD),
@@ -283,7 +282,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                           ),
                                         ),
                                         Container(
-                                          width: 200.0,
+                                          width: 190.0,
                                           height: 90.0,
                                           decoration: BoxDecoration(
                                             color: Color(0xFFFDFDFD),
@@ -411,8 +410,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                     ),
                                   ]
                                       .divide(SizedBox(width: 10.0))
-                                      .addToStart(SizedBox(width: 10.0))
-                                      .addToEnd(SizedBox(width: 10.0)),
+                                      .around(SizedBox(width: 10.0)),
                                 ),
                               ),
                             ),
