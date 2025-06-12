@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "175898091193",
+    "project_id": "nawng-academy-8bb16",
+    "storage_bucket": "nawng-academy-8bb16.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175898091193:android:adc43fc092afaf8eae8568",
+        "android_client_info": {
+          "package_name": "com.nawngindonesia.nawngacademy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175898091193-k7q20l72gtkl5jb00trfl9srojjugc7n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nawngindonesia.nawngacademy",
+            "certificate_hash": "2e17ce76d60dd1d467755efa447af58ecd10ec37"
+          }
+        },
+        {
+          "client_id": "175898091193-62sfe53jgbdhuf3k5ce6oj83o9c8b95b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCATHhT7fmmF7DWChBF_WdPHCp0G8wBhwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "175898091193-62sfe53jgbdhuf3k5ce6oj83o9c8b95b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "175898091193-drvlmosqplfdmtegk7ani9f65p3kv8q1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nawngindonesia.nawngacademy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
