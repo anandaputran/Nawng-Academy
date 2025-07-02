@@ -1,6 +1,6 @@
 # Nawng Academy
 
-A new Flutter project.
+Sebuah project aplikasi berbasis mobile yang dibangun untuk memenuhi kebutuhan penulisan tugas akhir yang berjudul "Rancang Bangun UI/UX Nawng Academy Bebasis Mobile Menggunakan Metode Lean UX".
 
 ## Getting Started
 
