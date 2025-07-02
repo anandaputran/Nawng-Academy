@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'login_model.dart';
 export 'login_model.dart';
@@ -54,81 +53,84 @@ class _LoginWidgetState extends State<LoginWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        body: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Expanded(
-              flex: 6,
-              child: Container(
-                width: 100.0,
-                height: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xFF0D7EDD),
-                ),
-                alignment: AlignmentDirectional(0.0, 0.5),
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 70.0, 0.0, 32.0),
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 5.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0),
-                          ),
-                          child: Container(
-                            width: 200.0,
-                            height: 197.48,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: Image.asset(
-                                  'assets/images/nawng_academy_logo_app.png',
-                                ).image,
-                              ),
-                              borderRadius: BorderRadius.circular(16.0),
-                            ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+        backgroundColor: Color(0xFF0D7EDD),
+        body: Align(
+          alignment: AlignmentDirectional(0.0, 0.0),
+          child: Container(
+            width: MediaQuery.sizeOf(context).width * 0.9,
+            height: MediaQuery.sizeOf(context).height * 0.8,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(0.0),
+            ),
+            alignment: AlignmentDirectional(0.0, 0.0),
+            child: Align(
+              alignment: AlignmentDirectional(0.0, 0.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Material(
+                      color: Colors.transparent,
+                      elevation: 5.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width * 0.5,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Image.asset(
+                            'assets/images/nawng_academy_logo_app.png',
+                            width: MediaQuery.sizeOf(context).width * 0.4,
+                            fit: BoxFit.cover,
+                            alignment: Alignment(0.0, 0.0),
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Container(
-                          width: double.infinity,
-                          constraints: BoxConstraints(
-                            maxWidth: 570.0,
-                          ),
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 4.0,
-                                color: Color(0x33000000),
-                                offset: Offset(
-                                  0.0,
-                                  2.0,
-                                ),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                          child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsets.all(32.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    width: double.infinity,
+                    ),
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 1.0),
+                    child: Container(
+                      width: MediaQuery.sizeOf(context).width * 0.9,
+                      height: MediaQuery.sizeOf(context).height * 0.45,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 4.0,
+                            color: Color(0x33000000),
+                            offset: Offset(
+                              0.0,
+                              2.0,
+                            ),
+                          )
+                        ],
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      alignment: AlignmentDirectional(0.0, 1.0),
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 10.0, 10.0, 10.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Flexible(
+                                flex: 2,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.8,
                                     child: TextFormField(
                                       controller:
                                           _model.emailAddressTextController,
@@ -152,7 +154,26 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                         .labelLarge
                                                         .fontStyle,
                                               ),
-                                              fontSize: 14.0,
+                                              color: Color(0xFF0D7EDD),
+                                              fontSize: () {
+                                                if (MediaQuery.sizeOf(context)
+                                                        .width <
+                                                    kBreakpointSmall) {
+                                                  return 12.0;
+                                                } else if (MediaQuery.sizeOf(
+                                                            context)
+                                                        .width <
+                                                    kBreakpointMedium) {
+                                                  return 14.0;
+                                                } else if (MediaQuery.sizeOf(
+                                                            context)
+                                                        .width <
+                                                    kBreakpointLarge) {
+                                                  return 16.0;
+                                                } else {
+                                                  return 20.0;
+                                                }
+                                              }(),
                                               letterSpacing: 0.0,
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
@@ -165,43 +186,42 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
+                                            color: Color(0xFF0D7EDD),
+                                            width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(40.0),
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            width: 2.0,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(40.0),
                                         ),
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            width: 2.0,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(40.0),
                                         ),
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            width: 2.0,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(40.0),
                                         ),
                                         filled: true,
                                         fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                            .primaryText,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
@@ -217,6 +237,27 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                       .bodyLarge
                                                       .fontStyle,
                                             ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontSize: () {
+                                              if (MediaQuery.sizeOf(context)
+                                                      .width <
+                                                  kBreakpointSmall) {
+                                                return 10.0;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointMedium) {
+                                                return 14.0;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointLarge) {
+                                                return 18.0;
+                                              } else {
+                                                return 18.0;
+                                              }
+                                            }(),
                                             letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
@@ -233,13 +274,19 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           .asValidator(context),
                                     ),
                                   ),
-                                  Container(
-                                    width: double.infinity,
+                                ),
+                              ),
+                              Flexible(
+                                flex: 2,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  child: Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.8,
                                     child: TextFormField(
                                       controller: _model.passwordTextController,
                                       focusNode: _model.passwordFocusNode,
                                       autofocus: true,
-                                      autofillHints: [AutofillHints.password],
                                       obscureText: !_model.passwordVisibility,
                                       decoration: InputDecoration(
                                         labelText: 'Password',
@@ -257,7 +304,26 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                         .labelLarge
                                                         .fontStyle,
                                               ),
-                                              fontSize: 14.0,
+                                              color: Color(0xFF0D7EDD),
+                                              fontSize: () {
+                                                if (MediaQuery.sizeOf(context)
+                                                        .width <
+                                                    kBreakpointSmall) {
+                                                  return 12.0;
+                                                } else if (MediaQuery.sizeOf(
+                                                            context)
+                                                        .width <
+                                                    kBreakpointMedium) {
+                                                  return 14.0;
+                                                } else if (MediaQuery.sizeOf(
+                                                            context)
+                                                        .width <
+                                                    kBreakpointLarge) {
+                                                  return 16.0;
+                                                } else {
+                                                  return 20.0;
+                                                }
+                                              }(),
                                               letterSpacing: 0.0,
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
@@ -270,43 +336,40 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
+                                            color: Color(0xFF0D7EDD),
+                                            width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(40.0),
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            width: 2.0,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(40.0),
                                         ),
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2.0,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(40.0),
                                         ),
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2.0,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(40.0),
                                         ),
                                         filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
                                         suffixIcon: InkWell(
                                           onTap: () => safeSetState(
                                             () => _model.passwordVisibility =
@@ -318,9 +381,26 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             _model.passwordVisibility
                                                 ? Icons.visibility_outlined
                                                 : Icons.visibility_off_outlined,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 24.0,
+                                            color: Color(0xFF0D7EDD),
+                                            size: () {
+                                              if (MediaQuery.sizeOf(context)
+                                                      .width <
+                                                  kBreakpointSmall) {
+                                                return 10.0;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointMedium) {
+                                                return 15.0;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointLarge) {
+                                                return 20.0;
+                                              } else {
+                                                return 20.0;
+                                              }
+                                            }(),
                                           ),
                                         ),
                                       ),
@@ -338,6 +418,27 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                       .bodyLarge
                                                       .fontStyle,
                                             ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontSize: () {
+                                              if (MediaQuery.sizeOf(context)
+                                                      .width <
+                                                  kBreakpointSmall) {
+                                                return 12.0;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointMedium) {
+                                                return 14.0;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointLarge) {
+                                                return 16.0;
+                                              } else {
+                                                return 20.0;
+                                              }
+                                            }(),
                                             letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
@@ -353,75 +454,83 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           .asValidator(context),
                                     ),
                                   ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 5.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        // You will have to add an action on this rich text to go to your login page.
-                                        InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            context.pushNamed(
-                                              NewPassWidget.routeName,
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType
-                                                          .rightToLeft,
-                                                ),
-                                              },
-                                            );
-                                          },
-                                          child: RichText(
-                                            textScaler: MediaQuery.of(context)
-                                                .textScaler,
-                                            text: TextSpan(
-                                              children: [
-                                                TextSpan(
-                                                  text: 'Lupa Password?',
-                                                  style: TextStyle(),
-                                                )
-                                              ],
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    font: GoogleFonts
-                                                        .montserratAlternates(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                                    color: Color(0xFF0D7EDD),
-                                                    fontSize: 12.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Align(
+                                  alignment: AlignmentDirectional(1.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 20.0, 0.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.goNamed(
+                                          NewPassWidget.routeName,
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
                                             ),
-                                          ),
-                                        ),
-                                      ],
+                                          },
+                                        );
+                                      },
+                                      child: Text(
+                                        'Lupa Kata Sandi?',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts
+                                                  .montserratAlternates(
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              color: Color(0xFF0D7EDD),
+                                              fontSize: () {
+                                                if (MediaQuery.sizeOf(context)
+                                                        .width <
+                                                    kBreakpointSmall) {
+                                                  return 10.0;
+                                                } else if (MediaQuery.sizeOf(
+                                                            context)
+                                                        .width <
+                                                    kBreakpointMedium) {
+                                                  return 14.0;
+                                                } else if (MediaQuery.sizeOf(
+                                                            context)
+                                                        .width <
+                                                    kBreakpointLarge) {
+                                                  return 18.0;
+                                                } else {
+                                                  return 18.0;
+                                                }
+                                              }(),
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
                                     ),
                                   ),
-                                  FFButtonWidget(
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: FFButtonWidget(
                                     onPressed: () async {
                                       GoRouter.of(context).prepareAuthEvent();
 
@@ -435,14 +544,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         return;
                                       }
 
-                                      context.goNamedAuth(
-                                          ProfileWidget.routeName,
+                                      context.pushNamedAuth(
+                                          HomepageWidget.routeName,
                                           context.mounted);
                                     },
                                     text: 'Masuk Akun',
                                     options: FFButtonOptions(
-                                      width: double.infinity,
-                                      height: 44.0,
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.8,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.06,
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
@@ -454,55 +566,58 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           .override(
                                             font: GoogleFonts
                                                 .montserratAlternates(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontWeight,
+                                              fontWeight: FontWeight.bold,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .fontStyle,
                                             ),
                                             color: Colors.white,
-                                            fontSize: 14.0,
+                                            fontSize: () {
+                                              if (MediaQuery.sizeOf(context)
+                                                      .width <
+                                                  kBreakpointSmall) {
+                                                return 10.0;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointMedium) {
+                                                return 14.0;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointLarge) {
+                                                return 18.0;
+                                              } else {
+                                                return 18.0;
+                                              }
+                                            }(),
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontWeight,
+                                            fontWeight: FontWeight.bold,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .fontStyle,
                                           ),
                                       elevation: 20.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(24.0),
+                                      borderRadius: BorderRadius.circular(40.0),
+                                      hoverColor:
+                                          FlutterFlowTheme.of(context).success,
                                     ),
                                   ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Text(
-                                      'Atau',
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            font: GoogleFonts
-                                                .montserratAlternates(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
-                                            letterSpacing: 0.0,
+                                ),
+                              ),
+                              Expanded(
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    'Atau',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          font:
+                                              GoogleFonts.montserratAlternates(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -512,9 +627,45 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     .labelMedium
                                                     .fontStyle,
                                           ),
-                                    ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          fontSize: () {
+                                            if (MediaQuery.sizeOf(context)
+                                                    .width <
+                                                kBreakpointSmall) {
+                                              return 10.0;
+                                            } else if (MediaQuery.sizeOf(
+                                                        context)
+                                                    .width <
+                                                kBreakpointMedium) {
+                                              return 14.0;
+                                            } else if (MediaQuery.sizeOf(
+                                                        context)
+                                                    .width <
+                                                kBreakpointLarge) {
+                                              return 18.0;
+                                            } else {
+                                              return 18.0;
+                                            }
+                                          }(),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
                                   ),
-                                  FFButtonWidget(
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: FFButtonWidget(
                                     onPressed: () async {
                                       GoRouter.of(context).prepareAuthEvent();
                                       final user = await authManager
@@ -524,59 +675,89 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       }
 
                                       context.goNamedAuth(
-                                          ProfileWidget.routeName,
-                                          context.mounted);
+                                        HomepageWidget.routeName,
+                                        context.mounted,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     },
                                     text: 'Masuk dengan akun Google',
-                                    icon: FaIcon(
-                                      FontAwesomeIcons.google,
-                                      size: 20.0,
-                                    ),
                                     options: FFButtonOptions(
-                                      width: double.infinity,
-                                      height: 44.0,
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.8,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.06,
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                      color: Colors.white,
                                       textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .titleSmall
                                           .override(
                                             font: GoogleFonts
                                                 .montserratAlternates(
                                               fontWeight: FontWeight.bold,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                                      .titleSmall
                                                       .fontStyle,
                                             ),
+                                            color: Color(0xFF0D7EDD),
+                                            fontSize: () {
+                                              if (MediaQuery.sizeOf(context)
+                                                      .width <
+                                                  kBreakpointSmall) {
+                                                return 10.0;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointMedium) {
+                                                return 14.0;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointLarge) {
+                                                return 18.0;
+                                              } else {
+                                                return 18.0;
+                                              }
+                                            }(),
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .titleSmall
                                                     .fontStyle,
                                           ),
-                                      elevation: 0.0,
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        width: 2.0,
-                                      ),
+                                      elevation: 10.0,
                                       borderRadius: BorderRadius.circular(40.0),
                                       hoverColor: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                     ),
                                   ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      // You will have to add an action on this rich text to go to your login page.
-                                      Padding(
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    // You will have to add an action on this rich text to go to your login page.
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
                                         child: RichText(
@@ -592,7 +773,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.inter(
+                                                  font: GoogleFonts
+                                                      .montserratAlternates(
                                                     fontWeight:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -604,6 +786,29 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                             .bodyMedium
                                                             .fontStyle,
                                                   ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  fontSize: () {
+                                                    if (MediaQuery.sizeOf(
+                                                                context)
+                                                            .width <
+                                                        kBreakpointSmall) {
+                                                      return 10.0;
+                                                    } else if (MediaQuery
+                                                                .sizeOf(context)
+                                                            .width <
+                                                        kBreakpointMedium) {
+                                                      return 12.0;
+                                                    } else if (MediaQuery
+                                                                .sizeOf(context)
+                                                            .width <
+                                                        kBreakpointLarge) {
+                                                      return 14.0;
+                                                    } else {
+                                                      return 16.0;
+                                                    }
+                                                  }(),
                                                   letterSpacing: 0.0,
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
@@ -619,9 +824,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           ),
                                         ),
                                       ),
+                                    ),
 
-                                      // You will have to add an action on this rich text to go to your login page.
-                                      Padding(
+                                    // You will have to add an action on this rich text to go to your login page.
+                                    Align(
+                                      alignment: AlignmentDirectional(1.0, 0.0),
+                                      child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
                                         child: InkWell(
@@ -657,7 +865,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    font: GoogleFonts.inter(
+                                                    font: GoogleFonts
+                                                        .montserratAlternates(
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontStyle:
@@ -667,6 +876,28 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                               .fontStyle,
                                                     ),
                                                     color: Color(0xFF0D7EDD),
+                                                    fontSize: () {
+                                                      if (MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width <
+                                                          kBreakpointSmall) {
+                                                        return 10.0;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointMedium) {
+                                                        return 12.0;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointLarge) {
+                                                        return 14.0;
+                                                      } else {
+                                                        return 16.0;
+                                                      }
+                                                    }(),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
                                                     fontStyle:
@@ -679,20 +910,20 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           ),
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ].divide(SizedBox(height: 10.0)),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
+                            ].divide(SizedBox(height: 10.0)),
                           ),
                         ),
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                ].divide(SizedBox(height: 20.0)),
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

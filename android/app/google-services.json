@@ -14,19 +14,19 @@
       },
       "oauth_client": [
         {
-          "client_id": "175898091193-k7q20l72gtkl5jb00trfl9srojjugc7n.apps.googleusercontent.com",
+          "client_id": "175898091193-hqnjpjqle18njl26ukkpu1bc6kqd464c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.nawngindonesia.nawngacademy",
-            "certificate_hash": "2e17ce76d60dd1d467755efa447af58ecd10ec37"
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
           }
         },
         {
-          "client_id": "175898091193-sojlu3m69t40jucit6mik2ikr6mmjefj.apps.googleusercontent.com",
+          "client_id": "175898091193-nso721c77i3v6ti05t95d7n6bggrten0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.nawngindonesia.nawngacademy",
-            "certificate_hash": "a2b7c996d7ac9e84d8fa0b71328e224f7573d17d"
+            "certificate_hash": "0535aa8ae3b405e110cb03bab52c9043b1295a62"
           }
         },
         {

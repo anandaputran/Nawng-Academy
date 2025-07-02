@@ -77,13 +77,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? ProfileWidget() : IntroWidget(),
+          appStateNotifier.loggedIn ? HomepageWidget() : IntroWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? ProfileWidget() : IntroWidget(),
+              appStateNotifier.loggedIn ? HomepageWidget() : IntroWidget(),
         ),
         FFRoute(
           name: IntroWidget.routeName,
@@ -99,16 +99,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: LoginWidget.routeName,
           path: LoginWidget.routePath,
           builder: (context, params) => LoginWidget(),
-        ),
-        FFRoute(
-          name: Intro2Widget.routeName,
-          path: Intro2Widget.routePath,
-          builder: (context, params) => Intro2Widget(),
-        ),
-        FFRoute(
-          name: Intro3Widget.routeName,
-          path: Intro3Widget.routePath,
-          builder: (context, params) => Intro3Widget(),
         ),
         FFRoute(
           name: RegisterWidget.routeName,
@@ -156,6 +146,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
+          name: EditProfileWidget.routeName,
+          path: EditProfileWidget.routePath,
+          builder: (context, params) => EditProfileWidget(),
+        ),
+        FFRoute(
+          name: Intro2Widget.routeName,
+          path: Intro2Widget.routePath,
+          builder: (context, params) => Intro2Widget(),
+        ),
+        FFRoute(
+          name: Intro3Widget.routeName,
+          path: Intro3Widget.routePath,
+          builder: (context, params) => Intro3Widget(),
+        ),
+        FFRoute(
           name: Detail2Widget.routeName,
           path: Detail2Widget.routePath,
           asyncParams: {
@@ -167,11 +172,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.Document,
             ),
           ),
-        ),
-        FFRoute(
-          name: EditProfileWidget.routeName,
-          path: EditProfileWidget.routePath,
-          builder: (context, params) => EditProfileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -357,11 +357,11 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.black,
+                  color: Colors.transparent,
                   child: Center(
                     child: Image.asset(
-                      'assets/images/nawng_academy_logo_app.png',
-                      width: 150.0,
+                      'assets/images/logo.png',
+                      width: MediaQuery.sizeOf(context).width * 0.5,
                       fit: BoxFit.cover,
                     ),
                   ),

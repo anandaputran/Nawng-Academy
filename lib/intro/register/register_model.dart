@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 class RegisterModel extends FlutterFlowModel<RegisterWidget> {
   ///  State fields for stateful widgets in this page.
 
-  bool isDataUploading_uploadDataTdq = false;
-  FFUploadedFile uploadedLocalFile_uploadDataTdq =
+  bool isDataUploading_uploadDataKdt = false;
+  FFUploadedFile uploadedLocalFile_uploadDataKdt =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl_uploadDataTdq = '';
+  String uploadedFileUrl_uploadDataKdt = '';
 
   // State field(s) for nama widget.
   FocusNode? namaFocusNode;
